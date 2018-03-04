@@ -7,4 +7,4 @@ show_launcher = yes
 activity_version = 1
 license = GPLv2+
 summary = play game
-
+repository = "https://github.com/Gr33nMayhem/Wormy-Game.git"
