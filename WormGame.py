@@ -1125,21 +1125,21 @@ def additinOperation(a, b, ans, s):
     if s == 0:
         r = random.randint(0, 2)
         if r == 0:
-            question = _("%d + %d = __") % (a, b)
+            question = _("{arg1} + {arg2} = __").format (arg1 = a, arg2 = b)
             texSurfaceObj = fontObj.render(question, True, BLACK)
             texRectObj = texSurfaceObj.get_rect()
             texRectObj.center = (WINDOWWIDTH / 2, 20)
             DISPLAYSURF.blit(texSurfaceObj, texRectObj)
             return ans, question
         elif r == 1:
-            question = _("%d + __ = %d") % (a, ans)
+            question = _("{arg1} + __ = {arg2}").format (arg1 = a, arg2 = ans)
             texSurfaceObj = fontObj.render(question, True, BLACK)
             texRectObj = texSurfaceObj.get_rect()
             texRectObj.center = (WINDOWWIDTH / 2, 20)
             DISPLAYSURF.blit(texSurfaceObj, texRectObj)
             return b, question
         elif r == 2:
-            question = _("__ + %d = %d") % (b, ans)
+            question = _("__ + {arg1}} = {arg2}").format (arg1 = b, arg2 = ans)
             texSurfaceObj = fontObj.render(question, True, BLACK)
             texRectObj = texSurfaceObj.get_rect()
             texRectObj.center = (WINDOWWIDTH / 2, 20)
@@ -1147,7 +1147,7 @@ def additinOperation(a, b, ans, s):
             return a, question
 
     elif s == 1:
-        question = _("%d __ %d = %d") % (a, b, ans)
+        question = _("{arg1} __ {arg2} = {arg3}").format (arg1 = a, arg2 = b, arg3 = ans)
         texSurfaceObj = fontObj.render(question, True, BLACK)
         texRectObj = texSurfaceObj.get_rect()
         texRectObj.center = (WINDOWWIDTH / 2, 20)
@@ -1157,7 +1157,7 @@ def additinOperation(a, b, ans, s):
     elif s == 2:
         randomEquality = random.randint(0, 2)
         if randomEquality == 0:
-            question = _("%d + %d __ %d") % (a, b, ans)
+            question = _("{arg1} + {arg2} __ {arg3}").format (arg1 = a, arg2 = b, arg3 = ans)
             texSurfaceObj = fontObj.render(question, True, BLACK)
             texRectObj = texSurfaceObj.get_rect()
             texRectObj.center = (WINDOWWIDTH / 2, 20)
@@ -1165,7 +1165,7 @@ def additinOperation(a, b, ans, s):
             return '=', question
         elif randomEquality == 1:
             randomIncrement = random.randint(1, 9)
-            question = _("%d + %d __ %d") % (a, b, ans + randomIncrement)
+            question = _("{arg1} + {arg2} __ {arg3}").format (arg1 = a, arg2 = b, arg3 = ans + randomIncrement)
             texSurfaceObj = fontObj.render(question, True, BLACK)
             texRectObj = texSurfaceObj.get_rect()
             texRectObj.center = (WINDOWWIDTH / 2, 20)
@@ -1173,7 +1173,7 @@ def additinOperation(a, b, ans, s):
             return '<', question
         elif randomEquality == 2:
             randomDecrement = random.randint(1, 9)
-            question = _("%d + %d __ %d") % (a, b, ans - randomDecrement)
+            question = _("{arg1} + {arg2} __ {arg3}").format (arg1 = a, arg2 = b, arg3 = ans - randomDecrement)
             texSurfaceObj = fontObj.render(question, True, BLACK)
             texRectObj = texSurfaceObj.get_rect()
             texRectObj.center = (WINDOWWIDTH / 2, 20)
@@ -1185,21 +1185,21 @@ def subtractionOperation(a, b, ans, s):
     if s == 0:
         r = random.randint(0, 2)
         if r == 0:
-            question = _("%d - %d = __") % (a, b)
+            question = _("{arg1} - {arg2} = __").format (arg1 = a, arg2 = b)
             texSurfaceObj = fontObj.render(question, True, BLACK)
             texRectObj = texSurfaceObj.get_rect()
             texRectObj.center = (WINDOWWIDTH / 2, 20)
             DISPLAYSURF.blit(texSurfaceObj, texRectObj)
             return ans, question
         elif r == 1:
-            question = _("%d - __ = %d") % (a, ans)
+            question = _("{arg1} - __ = {arg2}").format (arg1 = a, arg2 = ans)
             texSurfaceObj = fontObj.render(question, True, BLACK)
             texRectObj = texSurfaceObj.get_rect()
             texRectObj.center = (WINDOWWIDTH / 2, 20)
             DISPLAYSURF.blit(texSurfaceObj, texRectObj)
             return b, question
         elif r == 2:
-            question = _("__ - %d = %d") % (b, ans)
+            question = _("__ - {arg1}} = {arg2}").format (arg1 = b, arg2 = ans)
             texSurfaceObj = fontObj.render(question, True, BLACK)
             texRectObj = texSurfaceObj.get_rect()
             texRectObj.center = (WINDOWWIDTH / 2, 20)
@@ -1207,7 +1207,7 @@ def subtractionOperation(a, b, ans, s):
             return a, question
 
     elif s == 1:
-        question = _("%d __ %d = %d") % (a, b, ans)
+        question = _("{arg1} __ {arg2} = {arg3}").format (arg1 = a, arg2 = b, arg3 = ans)
         texSurfaceObj = fontObj.render(question, True, BLACK)
         texRectObj = texSurfaceObj.get_rect()
         texRectObj.center = (WINDOWWIDTH / 2, 20)
@@ -1217,7 +1217,7 @@ def subtractionOperation(a, b, ans, s):
     elif s == 2:
         randomEquality = random.randint(0, 2)
         if randomEquality == 0:
-            question = _("%d - %d __ %d") % (a, b, ans)
+            question = _("{arg1} - {arg2} __ {arg3}").format (arg1 = a, arg2 = b, arg3 = ans)
             texSurfaceObj = fontObj.render(question, True, BLACK)
             texRectObj = texSurfaceObj.get_rect()
             texRectObj.center = (WINDOWWIDTH / 2, 20)
@@ -1225,7 +1225,7 @@ def subtractionOperation(a, b, ans, s):
             return '=', question
         elif randomEquality == 1:
             randomIncrement = random.randint(1, 9)
-            question = _("%d - %d __ %d") % (a, b, ans + randomIncrement)
+            question = _("{arg1} - {arg2} __ {arg3}").format (arg1 = a, arg2 = b, arg3 = ans + randomIncrement)
             texSurfaceObj = fontObj.render(question, True, BLACK)
             texRectObj = texSurfaceObj.get_rect()
             texRectObj.center = (WINDOWWIDTH / 2, 20)
@@ -1233,7 +1233,7 @@ def subtractionOperation(a, b, ans, s):
             return '<', question
         elif randomEquality == 2:
             randomDecrement = random.randint(1, 9)
-            question = _("%d - %d __ %d") % (a, b, ans - randomDecrement)
+            question = _("{arg1} - {arg2} __ {arg3}").format (arg1 = a, arg2 = b, arg3 = ans - randomDecrement)
             texSurfaceObj = fontObj.render(question, True, BLACK)
             texRectObj = texSurfaceObj.get_rect()
             texRectObj.center = (WINDOWWIDTH / 2, 20)
@@ -1245,21 +1245,21 @@ def multiplicationOperation(a, b, ans, s):
     if s == 0:
         r = random.randint(0, 2)
         if r == 0:
-            question = _("%d x %d = __") % (a, b)
+            question = _("{arg1} x {arg2} = __").format (arg1 = a, arg2 = b)
             texSurfaceObj = fontObj.render(question, True, BLACK)
             texRectObj = texSurfaceObj.get_rect()
             texRectObj.center = (WINDOWWIDTH / 2, 20)
             DISPLAYSURF.blit(texSurfaceObj, texRectObj)
             return ans, question
         elif r == 1:
-            question = _("%d x __ = %d") % (a, ans)
+            question = _("{arg1} x {arg2} = __").format (arg1 = a, arg2 = ans)
             texSurfaceObj = fontObj.render(question, True, BLACK)
             texRectObj = texSurfaceObj.get_rect()
             texRectObj.center = (WINDOWWIDTH / 2, 20)
             DISPLAYSURF.blit(texSurfaceObj, texRectObj)
             return b, question
         elif r == 2:
-            question = _("__ x %d = %d") % (b, ans)
+            question = _("{arg1} x {arg2} = __").format (arg1 = b, arg2 = ans)
             texSurfaceObj = fontObj.render(question, True, BLACK)
             texRectObj = texSurfaceObj.get_rect()
             texRectObj.center = (WINDOWWIDTH / 2, 20)
@@ -1267,7 +1267,7 @@ def multiplicationOperation(a, b, ans, s):
             return a, question
 
     elif s == 1:
-        question = _("%d __ %d = %d") % (a, b, ans)
+        question = _("{arg1} __ {arg2} = {arg3}").format (arg1 = a, arg2 = b, arg3 = ans)
         texSurfaceObj = fontObj.render(question, True, BLACK)
         texRectObj = texSurfaceObj.get_rect()
         texRectObj.center = (WINDOWWIDTH / 2, 20)
@@ -1277,7 +1277,7 @@ def multiplicationOperation(a, b, ans, s):
     elif s == 2:
         randomEquality = random.randint(0, 2)
         if randomEquality == 0:
-            question = _("%d x %d __ %d") % (a, b, ans)
+            question = _("{arg1} x {arg2} __ {arg3}").format (arg1 = a, arg2 = b, arg3 = ans)
             texSurfaceObj = fontObj.render(question, True, BLACK)
             texRectObj = texSurfaceObj.get_rect()
             texRectObj.center = (WINDOWWIDTH / 2, 20)
@@ -1285,7 +1285,7 @@ def multiplicationOperation(a, b, ans, s):
             return '=', question
         elif randomEquality == 1:
             randomIncrement = random.randint(1, 9)
-            question = _("%d x %d __ %d") % (a, b, ans + randomIncrement)
+            question = _("{arg1} x {arg2} __ {arg3}").format (arg1 = a, arg2 = b, arg3 = ans + randomIncrement)
             texSurfaceObj = fontObj.render(question, True, BLACK)
             texRectObj = texSurfaceObj.get_rect()
             texRectObj.center = (WINDOWWIDTH / 2, 20)
@@ -1293,7 +1293,7 @@ def multiplicationOperation(a, b, ans, s):
             return '<', question
         elif randomEquality == 2:
             randomDecrement = random.randint(1, 9)
-            question = _("%d x %d __ %d") % (a, b, ans - randomDecrement)
+            question = _("{arg1} x {arg2} __ {arg3}").format (arg1 = a, arg2 = b, arg3 = ans + randomDecrement)
             texSurfaceObj = fontObj.render(question, True, BLACK)
             texRectObj = texSurfaceObj.get_rect()
             texRectObj.center = (WINDOWWIDTH / 2, 20)
@@ -1305,21 +1305,21 @@ def divisionOperation(a, b, ans, s):
     if s == 0:
         r = random.randint(0, 2)
         if r == 0:
-            question = _("%d / %d = __") % (a, b)
+            question = _("{arg1} / {arg2} = __").format (arg1 = a, arg2 = b)
             texSurfaceObj = fontObj.render(question, True, BLACK)
             texRectObj = texSurfaceObj.get_rect()
             texRectObj.center = (WINDOWWIDTH / 2, 20)
             DISPLAYSURF.blit(texSurfaceObj, texRectObj)
             return ans, question
         elif r == 1:
-            question = _("%d / __ = %d") % (a, ans)
+            question = _("{arg1} / {arg2} = __").format (arg1 = a, arg2 = ans)
             texSurfaceObj = fontObj.render(question, True, BLACK)
             texRectObj = texSurfaceObj.get_rect()
             texRectObj.center = (WINDOWWIDTH / 2, 20)
             DISPLAYSURF.blit(texSurfaceObj, texRectObj)
             return b, question
         elif r == 2:
-            question = _("__ / %d = %d") % (b, ans)
+            question = _("{arg1} / {arg2} = __").format (arg1 = b, arg2 = ans)
             texSurfaceObj = fontObj.render(question, True, BLACK)
             texRectObj = texSurfaceObj.get_rect()
             texRectObj.center = (WINDOWWIDTH / 2, 20)
@@ -1327,7 +1327,7 @@ def divisionOperation(a, b, ans, s):
             return a, question
 
     elif s == 1:
-        question = _("%d __ %d = %d") % (a, b, ans)
+        question = _("{arg1} __ {arg2} = {arg3}").format (arg1 = a, arg2 = b, arg3 = ans)
         texSurfaceObj = fontObj.render(question, True, BLACK)
         texRectObj = texSurfaceObj.get_rect()
         texRectObj.center = (WINDOWWIDTH / 2, 20)
@@ -1337,7 +1337,7 @@ def divisionOperation(a, b, ans, s):
     elif s == 2:
         randomEquality = random.randint(0, 2)
         if randomEquality == 0:
-            question = _("%d / %d __ %d") % (a, b, ans)
+            question = _("{arg1} / {arg2} __ {arg3}").format (arg1 = a, arg2 = b, arg3 = ans)
             texSurfaceObj = fontObj.render(question, True, BLACK)
             texRectObj = texSurfaceObj.get_rect()
             texRectObj.center = (WINDOWWIDTH / 2, 20)
@@ -1345,7 +1345,7 @@ def divisionOperation(a, b, ans, s):
             return '=', question
         elif randomEquality == 1:
             randomIncrement = random.randint(1, 9)
-            question = _("%d / %d __ %d") % (a, b, ans + randomIncrement)
+            question = _("{arg1} / {arg2} __ {arg3}").format (arg1 = a, arg2 = b, arg3 = ans + randomIncrement)
             texSurfaceObj = fontObj.render(question, True, BLACK)
             texRectObj = texSurfaceObj.get_rect()
             texRectObj.center = (WINDOWWIDTH / 2, 20)
@@ -1353,7 +1353,7 @@ def divisionOperation(a, b, ans, s):
             return '<', question
         elif randomEquality == 2:
             randomDecrement = random.randint(1, 9)
-            question = _("%d / %d __ %d") % (a, b, ans - randomDecrement)
+            question = _("{arg1} / {arg2} __ {arg3}").format (arg1 = a, arg2 = b, arg3 = ans + randomDecrement)
             texSurfaceObj = fontObj.render(question, True, BLACK)
             texRectObj = texSurfaceObj.get_rect()
             texRectObj.center = (WINDOWWIDTH / 2, 20)
