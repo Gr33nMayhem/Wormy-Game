@@ -835,7 +835,7 @@ def getRandomLocation(c):
 
 
 def drawScore(score):
-    scoreSurf = BASICFONT.render('Score: %s' % (score), True, BLACK)
+    scoreSurf = BASICFONT.render(_('Score: %s') % (score), True, BLACK)
     scoreRect = scoreSurf.get_rect()
     scoreRect.topleft = (WINDOWWIDTH - 120, 10)
     DISPLAYSURF.blit(scoreSurf, scoreRect)
