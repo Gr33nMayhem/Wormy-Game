@@ -41,7 +41,7 @@ import WormGame
 
 class XActivity(Activity):
     def __init__(self, handle):
-        Activity.__init__(self,handle)
+        Activity.__init__(self, handle)
 
         # Create the game instance.
         self.game = WormGame.wormgame()
@@ -53,7 +53,7 @@ class XActivity(Activity):
         # (self.game.run is called when the activity constructor
         # returns).
         self._pygamecanvas = sugargame.canvas.PygameCanvas(self,
-            main=self.game.run, modules=[pygame.display, pygame.font])
+                                                           main=self.game.run, modules=[pygame.display, pygame.font])
 
         # Note that set_canvas implicitly calls read_file when
         # resuming from the Journal.
